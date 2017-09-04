@@ -5,6 +5,7 @@
  */
 package com.sacooliveros.security.login.bean;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import java.util.Date;
 
 /**
@@ -12,8 +13,18 @@ import java.util.Date;
  * @author ricardo
  */
 public class Matricula {
+
     private String codigo;
-    private Date fecha;
+    
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy", timezone="GMT-0500")
+    private Date fechaMatricula;
+
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", timezone="GMT-0500")
+    private Date fechaCreacion;
+    
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
+    private Date fechaActualizacion;
+    
     private Double precio;
     private Double descuento;
     private Double pension;
@@ -26,14 +37,23 @@ public class Matricula {
         this.codigo = codigo;
     }
 
-    public Date getFecha() {
-        return fecha;
+    public Date getFechaMatricula() {
+        return fechaMatricula;
     }
 
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
+    public void setFechaMatricula(Date fechaMatricula) {
+        this.fechaMatricula = fechaMatricula;
     }
 
+    public Date getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public void setFechaCreacion(Date fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
+    }
+
+    
     public Double getPrecio() {
         return precio;
     }
@@ -57,6 +77,14 @@ public class Matricula {
     public void setPension(Double pension) {
         this.pension = pension;
     }
-    
+
+    public Date getFechaActualizacion() {
+        return fechaActualizacion;
+    }
+
+    public void setFechaActualizacion(Date fechaActualizacion) {
+        this.fechaActualizacion = fechaActualizacion;
+    }
+
     
 }
