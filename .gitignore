@@ -1,0 +1,14 @@
+# Ignorado carpetas target
+**/target
+**/nbproject
+.gradle
+build
+
+# Ignorando .class y .jar
+*.class
+
+# Ignorando carpetas .idea
+**/.idea
+
+# Ignorando .iml
+*.iml
